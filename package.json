@@ -1,0 +1,23 @@
+{
+  "name": "handy_weggy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quinnhalpin/Handy_Weggy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quinnhalpin/Handy_Weggy/issues"
+  },
+  "homepage": "https://github.com/quinnhalpin/Handy_Weggy#readme"
+}

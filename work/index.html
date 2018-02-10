@@ -18,6 +18,7 @@
 <html>
 <head>
    <!-- Add to home screen for Safari on iOS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Weather PWA">
@@ -29,8 +30,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather PWA</title>
+  <title>Handy Weggy</title>
   <link rel="stylesheet" type="text/css" href="styles/inline.css">
+  <script src="scripts/product.js" async></script>
+  <script src="scripts/app.js" async></script>
 
   <!-- TODO add manifest here -->
   
@@ -38,9 +41,10 @@
 <body>
 
   <header class="header">
-    <h1 class="header__title">Weather PWA</h1>
+    <h1 class="header__title">Handy Weggy</h1>
     <button id="butRefresh" class="headerButton" aria-label="Refresh"></button>
     <button id="butAdd" class="headerButton" aria-label="Add"></button>
+    <button id="test" class="test" onClick="getProduct" aria-label="Test"></button>
   </header>
 
   <main class="main">
@@ -173,7 +177,6 @@
   </div>
 
   <!-- Uncomment the line below when ready to test with fake data -->
-  <script src="scripts/app.js" async></script>
-
+  
 </body>
 </html>

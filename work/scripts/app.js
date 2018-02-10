@@ -44,7 +44,7 @@
     app.toggleAddDialog(true);
   });
 
-document.getElementById('butAddCity').addEventListener('click', function() {
+  document.getElementById('butAddCity').addEventListener('click', function() {
     // Add the newly selected city
     var select = document.getElementById('selectCityToAdd');
     var selected = select.options[select.selectedIndex];
@@ -63,6 +63,7 @@ document.getElementById('butAddCity').addEventListener('click', function() {
     // Close the add new city dialog
     app.toggleAddDialog(false);
   });
+  document.getElementById('test').addEventListener('click', getProduct);
 
 
   /*****************************************************************************
@@ -168,26 +169,6 @@ document.getElementById('butAddCity').addEventListener('click', function() {
     var statement = 'select * from weather.forecast where woeid=' + key;
     var url = 'https://query.yahooapis.com/v1/public/yql?format=json&q=' +
         statement;
-    // TODO add cache logic here
-    if ('caches' in window) {
-      /*
-       * Check if the service worker has already cached this city's weather
-       * data. If the service worker has the data, then display the cached
-       * data while the app fetches the latest data.
-       */
-      caches.match(url).then(function(response) {
-        if (response) {
-          response.json().then(function updateFromCache(json) {
-            var results = json.query.results;
-            results.key = key;
-            results.label = label;
-            results.created = json.query.created;
-            app.updateForecastCard(results);
-          });
-        }
-      });
-    }
-
     // Fetch the latest data.
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
@@ -218,11 +199,11 @@ document.getElementById('butAddCity').addEventListener('click', function() {
   };
 
   // TODO add saveSelectedCities function here
+  // Save list of cities to localStorage.
   app.saveSelectedCities = function() {
     var selectedCities = JSON.stringify(app.selectedCities);
     localStorage.selectedCities = selectedCities;
   };
-
 
   app.getIconClass = function(weatherCode) {
     // Weather codes: https://developer.yahoo.com/weather/documentation.html#codes
@@ -331,6 +312,17 @@ document.getElementById('butAddCity').addEventListener('click', function() {
   // TODO uncomment line below to test app with fake data
   // app.updateForecastCard(initialWeatherForecast);
 
+  /************************************************************************
+   *
+   * Code required to start the app
+   *
+   * NOTE: To simplify this codelab, we've used localStorage.
+   *   localStorage is a synchronous API and has serious performance
+   *   implications. It should not be used in production applications!
+   *   Instead, check out IDB (https://www.npmjs.com/package/idb) or
+   *   SimpleDB (https://gist.github.com/inexorabletash/c8069c042b734519680c)
+   ************************************************************************/
+
   // TODO add startup code here
   app.selectedCities = localStorage.selectedCities;
   if (app.selectedCities) {
@@ -351,10 +343,4 @@ document.getElementById('butAddCity').addEventListener('click', function() {
     app.saveSelectedCities();
   }
 
-  // TODO add service worker code here
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-             .register('./service-worker.js')
-             .then(function() { console.log('Service Worker Registered'); });
-  }
 })();
