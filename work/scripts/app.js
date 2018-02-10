@@ -63,7 +63,7 @@
     // Close the add new city dialog
     app.toggleAddDialog(false);
   });
-  document.getElementById('test').addEventListener('click', getProduct);
+  document.getElementById('test').addEventListener('click', getProducts);
 
 
   /*****************************************************************************
