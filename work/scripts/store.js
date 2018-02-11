@@ -63,9 +63,7 @@ $(document).ready(function(){
   var getCordinates = function(user_location, wegmanLocation) {
       var userLat = user_location.latitude;
       var userLong = user_location.longitude;
-      console.log(userLat+"  "+userLong);
       $.each(wegmanLocation, function(key,value){
-          // console.log(value);
             currentWegLat = value.Location.Latitude;
             currentWegLong = value.Location.Longitude;
             getDistance(userLat,userLong, value);
