@@ -29,148 +29,178 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather PWA</title>
+  <title>Handy Weggy</title>
   <link rel="stylesheet" type="text/css" href="styles/inline.css">
 
-  <!-- TODO add manifest here -->
-  
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
 </head>
-<body>
 
-  <header class="header">
-    <h1 class="header__title">Weather PWA</h1>
-    <button id="butRefresh" class="headerButton" aria-label="Refresh"></button>
-    <button id="butAdd" class="headerButton" aria-label="Add"></button>
-  </header>
+  <!-- TODO add manifest here -->
+  <body>
+    
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        
+       <div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+                </button><a href="#" class="navbar-brand"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> My Cart</a>
 
-  <main class="main">
-    <div class="card cardTemplate weather-forecast" hidden>
-      <div class="city-key" hidden></div>
-      <div class="card-last-updated" hidden></div>
-      <div class="location"></div>
-      <div class="date"></div>
-      <div class="description"></div>
-      <div class="current">
-        <div class="visual">
-          <div class="icon"></div>
-          <div class="temperature">
-            <span class="value"></span><span class="scale">°F</span>
-          </div>
-        </div>
-        <div class="description">
-          <div class="humidity"></div>
-          <div class="wind">
-            <span class="value"></span>
-            <span class="scale">mph</span>
-            <span class="direction"></span>°
-          </div>
-          <div class="sunrise"></div>
-          <div class="sunset"></div>
-        </div>
-      </div>
-      <div class="future">
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-        <div class="oneday">
-          <div class="date"></div>
-          <div class="icon"></div>
-          <div class="temp-high">
-            <span class="value"></span>°
-          </div>
-          <div class="temp-low">
-            <span class="value"></span>°
-          </div>
-        </div>
-      </div>
+              <form>
+                <input type='text' id='link_id'>
+                <input type='button' id='link' value='Search' onClick='javascript:goTo()'>
+              </form>
+         </div>
+               
+    <div class="collapse navbar-collapse" id="bs-nav-demo"> 
+           
+            
+           <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Sign Up</a></li>
+                <li><a href="#">Log In</a></li>
+            </ul>
     </div>
-  </main>
+            </div>
+         </nav>
+    
+    <div class="container">
+       <div class="jumbotron">
+         <h1><span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span> Handy Weggy</h1>
+           <p>Meals & Recipe Types</p>
+       </div>
+    
+    
+    
+    
+    <div class="row">
+      <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
+        
+          <div class="thumbnail">
+        <label class="image-checkbox"> 
 
-  <div class="dialog-container">
-    <div class="dialog">
-      <div class="dialog-title">Add new city</div>
-      <div class="dialog-body">
-        <select id="selectCityToAdd">
-          <!-- Values map to Yahoo Weather API Where On Earth Identifiers (WOEIDs).
-               https://developer.yahoo.com/weather/documentation.html#req -->
-          <option value="2357536">Austin, TX</option>
-          <option value="2367105">Boston, MA</option>
-          <option value="2379574">Chicago, IL</option>
-          <option value="2459115">New York, NY</option>
-          <option value="2475687">Portland, OR</option>
-          <option value="2487956">San Francisco, CA</option>
-          <option value="2490383">Seattle, WA</option>
-        </select>
+              <img class="img-responsive"
+              src="http://i55.tinypic.com/1zlw294.jpgg">
+              <input type="checkbox" name="image[]" value="" />
+      <i class="fa fa-check hidden"></i>
+        </label>     
+          </div>
       </div>
-      <div class="dialog-buttons">
-        <button id="butAddCity" class="button">Add</button>
-        <button id="butAddCancel" class="button">Cancel</button>
-      </div>
+    
+      
+      <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
+          <div class="thumbnail">
+            <label class="image-checkbox">
+            
+              <img class="img-responsive"
+              src="http://www.chiaragiorleo.com/wp-content/uploads/2017/07/vegano.jpg">
+              <input type="checkbox" name="image[]" value="" />
+      <i class="fa fa-check hidden"></i>
+            </label>  
+          </div>
+        </div>
+    
+        
+      <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
+          <div class="thumbnail">
+            <label class="image-checkbox">
+               <img class="img-responsive"
+               src="https://www.flipflopglobetrotters.com/wp-content/uploads/2017/07/FlipFlopGlobetrotters-tips-for-gluten-free-travel.png">
+               <input type="checkbox" name="image[]" value="" />
+      <i class="fa fa-check hidden"></i>
+            </label>   
+          </div>
+       </div>
+    
+       
+       <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
+        
+          <div class="thumbnail">
+            <label class="image-checkbox">
+               <img class="img-responsive"
+               src="https://blogs.scientificamerican.com/food-matters/files/2014/04/April-Blog-1-iStock_000027293813Small.jpg">
+               <input type="checkbox" name="image[]" value="" />
+      <i class="fa fa-check hidden"></i>
+    </label>
+          </div>     
+        </div>
+      
+        <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
+          
+          <div class="thumbnail">
+            <label class="image-checkbox">
+               <img class="img-responsive"
+               src="https://www.nuggetmarket.com/img/special-diets/USDDF.png">
+               <input type="checkbox" name="image[]" value="" />
+      <i class="fa fa-check hidden"></i>
+    </label>
+           </div>    
+          </div>
+       </div>
+       
+        <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
+          <div class="thumbnail">
+            <label class="image-checkbox">
+            
+               <img class="img-responsive"
+               src="https://visualpharm.com/assets/482/No%20Fish-595b40b65ba036ed117d3087.svg" alt="fish">
+               <input type="checkbox" name="image[]" value="" />
+      <i class="fa fa-check hidden"></i>
+             </label>  
+          </div>
+       </div>
+     
+        <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
+          <div class="thumbnail">
+            <label class="image-checkbox">
+            
+               <img class="img-responsive"
+               src="http://www.outsetmarketing.com/mariasnoodles/wp-content/uploads/2016/11/wheat-free-pasta-mariahs-noodles.png">
+               <input type="checkbox" name="image[]" value="" />
+      <i class="fa fa-check hidden"></i>
+            </label>   
+          </div>
+       </div>
+       
+        <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
+          <div class="thumbnail">
+            <label class="image-checkbox">
+            
+               <img class="img-responsive"
+               src="http://www.foufoubrands.com/vegalicious/wp-content/uploads/2015/10/icon-soy-free.png">
+               <input type="checkbox" name="image[]" value="" />
+      <i class="fa fa-check hidden"></i>
+            </label>   
+          </div>
+       </div>
+      
+        <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
+          <div class="thumbnail">
+            <label class="image-checkbox">
+            
+               <img class="img-responsive"
+               src="https://images.mysafetysign.com/img/lg/L/allergy-alert-no-shellfish-please-door-decal-lb-2978.png">
+               <input type="checkbox" name="image[]" value="" />
+      <i class="fa fa-check hidden"></i>
+            </label>  
+          </div>
+       </div>
+       
+        
     </div>
-  </div>
+        
+    
+    </div>
+    
+       <script src="https://code.jquery.com/jquery-3.2.1.js">
+       </script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    </body>
+</html>
 
-  <div class="loader">
-    <svg viewBox="0 0 32 32" width="32" height="32">
-      <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
-    </svg>
-  </div>
 
   <!-- Uncomment the line below when ready to test with fake data -->
   <script src="scripts/app.js" async></script>
