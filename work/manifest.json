@@ -1,6 +1,10 @@
 {
   "name": "Weather",
   "short_name": "Weather",
+  "permissions":[
+    "http://www.google.com/",
+    "https://api.wegmans.io/"
+  ],
   "icons": [{
     "src": "images/icons/icon-128x128.png",
       "sizes": "128x128",
