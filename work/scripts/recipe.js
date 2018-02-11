@@ -28,7 +28,7 @@ function getItems(data){
           eachIncredient = value 
           $.each(eachIncredient, function(key, value){
             console.log(value);
-            listOfItems.push({"desc":value.Description,"quantity":value.Quantity});
+            listOfItems.push({"desc":value.Description,"quantity":value.Quantity, "Id":value.Id});
           });
           updateModelItems(listOfItems);
           console.log(listOfItems);
@@ -38,7 +38,6 @@ function getItems(data){
 function updateModelItems(items){
   str = "<table class =\"striped\"><thead><tr><th>Item Name</th><th>Quantity</th></tr></thead></tbody><tbody>";
   items.forEach(function(item){
-    console.log(item);
     quantity = item.quantity || "some";
     str += "<tr><td>"+item.desc+"</td><td>"+quantity+"</td></tr>";
   });

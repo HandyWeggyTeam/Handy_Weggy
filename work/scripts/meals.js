@@ -57,7 +57,7 @@ function getQueriedMeal(){
       console.log(data.results)
       meals = data.results;
       filtered_meals = data.results.filter(function(value){
-        console.log(value.name)
+        console.log(value)
         let item = (value.name).toLowerCase();
         return item.indexOf(meal) !== -1;
       })
