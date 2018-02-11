@@ -18,9 +18,6 @@ function getAisle(sku, store, item){
         updateAisleForItem(data[0].AisleSide, item);
         return(data[0].AisleSide);
       }
-    })
-    .fail(function() {
-        alert("error");
     });
 }
 

@@ -72,4 +72,5 @@ function viewCart(){
   $(".filter_images").css("display", "none");
   $("#meals").css("display", "none");
   $("#cart_table").css("display", "block");
+  $("#store_table").css("display", "block");
 }

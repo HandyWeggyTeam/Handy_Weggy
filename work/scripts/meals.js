@@ -42,10 +42,41 @@ function stopViewingCart(){
   $(".filter_images").css("display", "block");
   $("#meals").css("display", "block");
   $("#cart_table").css("display", "none");
+  $("#store_table").css("display", "none");
 }
 
+var filters = {
+  "vegan":false,
+  "vegetarian":false,
+  "gluten":false,
+  "nut free":false,
+  "no fish":false,
+  "dairy free":false,
+}
+
+function filterFunction(element){
+  key = element.wellnessKey.toLowerCase();
+  console.log(key)
+  console.log(Object.keys(filters))
+  answer = true;
+  Object.keys(filters).forEach(function(filter){
+    if (filters[filter]){
+      console.log(key.indexOf(filter) == -1)
+      if (key.indexOf(filter) == -1){
+        answer = false;
+      }
+    }
+  });
+  return answer;
+}
+
+function checkCategory(element){
+  filters[element.id] = !filters[element.id];
+}
 
 function getQueriedMeal(){
+  console.log("filters")
+  console.log(filters)
   meal = $("#search_meal").val().toLowerCase();
   stopViewingCart();
   console.log(meal)
@@ -63,13 +94,16 @@ function getQueriedMeal(){
       data: "{body}",
     })
     .done(function(data) {
-      console.log(data.results)
+      console.log(data.results);
       meals = data.results;
       filtered_meals = data.results.filter(function(value){
         console.log(value)
         let item = (value.name).toLowerCase();
         return item.indexOf(meal) !== -1;
-      })
+      });
+      console.log(filtered_meals)
+      filtered_meals = filtered_meals.filter(filterFunction);
+
       console.log(filtered_meals);
       updateMeals(filtered_meals);
     })

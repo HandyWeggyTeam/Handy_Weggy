@@ -96,7 +96,7 @@
       <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
         
           <div class="thumbnail">
-        <label class="image-checkbox"> 
+        <label id="vegetarian" class="image-checkbox" onClick=checkCategory(this)> 
 
               <img class="img-responsive"
               src="http://i55.tinypic.com/1zlw294.jpgg">
@@ -112,7 +112,7 @@
       
       <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
           <div class="thumbnail">
-            <label class="image-checkbox">
+            <label id="vegan" class="image-checkbox" onClick=checkCategory(this)>
             
               <img class="img-responsive"
               src="http://www.chiaragiorleo.com/wp-content/uploads/2017/07/vegano.jpg">
@@ -128,7 +128,7 @@
         
       <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
           <div class="thumbnail">
-            <label class="image-checkbox">
+            <label id="gluten" class="image-checkbox" onClick=checkCategory(this)>
                <img class="img-responsive"
                src="https://www.flipflopglobetrotters.com/wp-content/uploads/2017/07/FlipFlopGlobetrotters-tips-for-gluten-free-travel.png">
                <input type="checkbox" name="image[]" value="" />
@@ -144,7 +144,7 @@
        <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
         
           <div class="thumbnail">
-            <label class="image-checkbox">
+            <label id="nut_free" class="image-checkbox" onClick=checkCategory(this)>
                <img class="img-responsive"
                src="https://blogs.scientificamerican.com/food-matters/files/2014/04/April-Blog-1-iStock_000027293813Small.jpg">
                <input type="checkbox" name="image[]" value="" />
@@ -159,7 +159,7 @@
         <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
           
           <div class="thumbnail">
-            <label class="image-checkbox">
+            <label id="dairy_free" class="image-checkbox" onClick=checkCategory(this)>
                <img class="img-responsive"
                src="https://www.nuggetmarket.com/img/special-diets/USDDF.png">
                <input type="checkbox" name="image[]" value="" />
@@ -174,7 +174,7 @@
        
         <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
           <div class="thumbnail">
-            <label class="image-checkbox">
+            <label id="no_fish" class="image-checkbox" onClick=checkCategory(this)>
             
                <img class="img-responsive"
                src="https://images.mysafetysign.com/img/lg/L/allergy-alert-no-fish-please-door-decal-lb-2983.png" alt="fish">
@@ -189,7 +189,7 @@
      
         <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
           <div class="thumbnail">
-            <label class="image-checkbox">
+            <label id="wheat_free" class="image-checkbox" onClick=checkCategory(this)>
             
                <img class="img-responsive"
                src="http://www.outsetmarketing.com/mariasnoodles/wp-content/uploads/2016/11/wheat-free-pasta-mariahs-noodles.png">
@@ -204,7 +204,7 @@
        
         <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
           <div class="thumbnail">
-            <label class="image-checkbox">
+            <label id="something" class="image-checkbox" onClick=checkCategory(this)>
             
                <img class="img-responsive"
                src="http://www.foufoubrands.com/vegalicious/wp-content/uploads/2015/10/icon-soy-free.png">
@@ -219,7 +219,7 @@
       
         <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
           <div class="thumbnail">
-            <label class="image-checkbox">
+            <label id="no_shell" class="image-checkbox" onClick=checkCategory(this)>
             
                <img class="img-responsive"
                src="https://images.mysafetysign.com/img/lg/L/allergy-alert-no-shellfish-please-door-decal-lb-2978.png">
@@ -248,7 +248,7 @@
         <button onClick="updateShoppingCart()"class="btn modal-close waves-effect btn-flat">Add To Cart</button>
       </div>
     </div>
-    <div class="Store Near Me" id="store_table">
+    <div class="Store Near Me col-xs-4 col-sm-3 col-md-8 offset-m3 center-block text-center" id="store_table" style="display:none">
      <h4>STORES NEAR ME</h4>
    </div>
     <div class="Shopping_Cart col-xs-4 col-sm-3 col-md-8 offset-m3 center-block text-center" id="cart_table" style="display:none">
