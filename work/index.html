@@ -41,13 +41,17 @@
 <!-- >>>>>>> ee11c623dc7844891439a6e65f3d7aeac7f444b9
  -->  <!-- <script src="scripts/product.js" async></script>
 ======= -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="styles/inline.css"> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script src="scripts/meals.js" async></script>
   <script src="scripts/aisle.js" async></script>
   <script src="scripts/price.js" async></script>
   <script src="scripts/product.js" async></script>
   <script src="scripts/store.js" async></script>
-<!-- >>>>>>> 076430b0007cbf593970c6e76744438e2f083bcb
- -->  <script src="scripts/recipe.js" async></script>
+  <script src="scripts/recipe.js" async></script>
   <script src="scripts/app.js" async></script>
   
 
@@ -84,11 +88,34 @@
                 <li><a href="#">Log In</a></li>
             </ul>
     </div>
+    <nav>
+       <nav class="black">
+            <div class="nav-wrapper">
+              <a href="#" class="navbar-brand"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> My Cart</a>
+                <ul class=" center">               
+                    <li>    
+                      <div class="row">
+                        <div class="col s12 " >
+                          <div class="row" id="topbarsearch">
+                            <div class="input-field col s12 s12 red-text">
+                              <i class="red-text material-icons prefix"></i>
+                              <input type="text" placeholder="search" id="search_meal" class="white-text" >
+                              </div>
+                          </div>
+                    
+                          </div>
+                        </div> 
+                    </li>  
+                    <li>
+                      <a class="waves-effect waves-light btn-small" onClick="getQueriedMeal()">Go</a>
+                    </li>
+                    <li>Sign In</li>
+                   </ul> 
             </div>
-         </nav>
+          </nav> 
     
     <div class="container">
-       <div class="jumbotron">
+       <div class="jumbotron black">
          <h1><span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span> Handy Weggy</h1>
            <p>Meals & Recipe Types</p>
        </div>
@@ -208,16 +235,10 @@
             </label>  
           </div>
        </div>
-       
-        
     </div>
-        
-    
-    </div>
-    
+    <div id="meals" style="line-height: normal"></div>
        <script src="https://code.jquery.com/jquery-3.2.1.js">
        </script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
     </body>
 </html>
