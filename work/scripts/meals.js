@@ -1,4 +1,4 @@
-function getMeals(meal){
+function getMeals(){
   var params = {
     // Request parameters
   };
@@ -32,4 +32,44 @@ function getMeals(meal){
     .fail(function() {
         alert("error");
     });
+}
+
+function getQueriedMeal(){
+  meal = $("#search_meal").val().toLowerCase();
+  console.log(meal)
+  var params = {
+    // Request parameters
+  };
+  $.ajax({
+      url: "https://api.wegmans.io/meals/recipes",
+      beforeSend: function(xhrObj){
+          // Request headers
+          xhrObj.setRequestHeader("Meals-Subscription-Key","c3122eb0bf3b43249ad1e45829c8eab4");
+      },
+      type: "GET",
+      // Request body
+      data: "{body}",
+    })
+    .done(function(data) {
+      console.log(data.results)
+      filtered_meals = data.results.filter(function(value){
+        console.log(value.name)
+        let item = (value.name).toLowerCase();
+        return item.indexOf(meal) !== -1;
+      })
+      console.log(filtered_meals);
+      updateMeals(filtered_meals);
+    })
+    .fail(function() {
+        alert("error");
+    });
+}
+function updateMeals(filtered_meals){
+  str = '<div class="row">';
+  filtered_meals.forEach(function(e){
+    str +=  '<div class="col s5 m3"><div class="card"><div class="card-image"><img src="'+e.imageUrl+'"></div><div class="card-content black-text"><p>'+e.name+'</p></div></div></div>';
+  });
+  str += '</div>';
+  $( "#meals" ).html(str);
+        
 }
