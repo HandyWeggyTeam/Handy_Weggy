@@ -6,7 +6,7 @@ function getRecipe(id){
       url: "https://api.wegmans.io/meals/recipes/14224",
       beforeSend: function(xhrObj){
           // Request headers
-          xhrObj.setRequestHeader("Meals-Subscription-Key","3c42e0a1f50740bb9a3ee9bb2a8b0be7");
+          xhrObj.setRequestHeader("Meals-Subscription-Key","c3122eb0bf3b43249ad1e45829c8eab4");
       },
       type: "GET",
       // Request body
