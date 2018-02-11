@@ -63,9 +63,9 @@ $(".image-checkbox").on("click", function (e) {
   //   // Close the add new city dialog
   //   app.toggleAddDialog(false);
   // });
-  document.getElementById('test2').addEventListener('click', getMeals);
-  document.getElementById('test3').addEventListener('click', getRecipe);
-  document.getElementById('test').addEventListener('click', getProducts);
+  // document.getElementById('test2').addEventListener('click', getMeals);
+  // document.getElementById('test3').addEventListener('click', getRecipe);
+  // document.getElementById('test').addEventListener('click', getProducts);
 
 
   /*****************************************************************************
