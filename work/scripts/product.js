@@ -1,12 +1,9 @@
-function getProducts(product_search){
-  var params = {
-    // Request parameters
-  };
+function getProducts(){
   $.ajax({
-      url: "https://api.wegmans.io/product/products/search?criteria=jelly",
+      url: "https://api.wegmans.io/product/products/search?criteria=peanutbutter",
       beforeSend: function(xhrObj){
           // Request headers
-          xhrObj.setRequestHeader("Product-Subscription-Key","3c42e0a1f50740bb9a3ee9bb2a8b0be7");
+          xhrObj.setRequestHeader("Product-Subscription-Key","c3122eb0bf3b43249ad1e45829c8eab4");
       },
       type: "GET",
       // Request body
@@ -14,8 +11,8 @@ function getProducts(product_search){
     })
     .done(function(data) {
       // product = getFirstResult(data);
-      // console.log(product);
-      getAisle(511053, 64);
+      console.log(data);
+      // getAisle(511053, 64);
       // getPriceBySKUandStore(product['sku']);
     })
     .fail(function() {
@@ -26,4 +23,5 @@ function getProducts(product_search){
 function getFirstResult(data){
   return data.results[0];
 }
+
 

@@ -18,7 +18,7 @@ function getPriceBySKU(sku){
 }
 
 function getPriceBySKUandStore(sku, store){
-  store = store || 1;
+  store = store || 62;
   $.ajax({
       url: "https://api.wegmans.io/price/pricing/current_prices/" + sku + "/" + store,
       beforeSend: function(xhrObj){

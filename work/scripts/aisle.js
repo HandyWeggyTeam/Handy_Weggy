@@ -1,4 +1,5 @@
 function getAisle(sku, store){
+  store = store || 62;
   var params = {
     // Request parameters
   };
@@ -6,7 +7,7 @@ function getAisle(sku, store){
       url: "https://api.wegmans.io/product/productlocations/"+sku + "/" + store,
       beforeSend: function(xhrObj){
           // Request headers
-          xhrObj.setRequestHeader("Product-Subscription-Key","3c42e0a1f50740bb9a3ee9bb2a8b0be7");
+          xhrObj.setRequestHeader("Product-Subscription-Key","c3122eb0bf3b43249ad1e45829c8eab4");
       },
       type: "GET",
       // Request body
@@ -21,3 +22,4 @@ function getAisle(sku, store){
         alert("error");
     });
 }
+
