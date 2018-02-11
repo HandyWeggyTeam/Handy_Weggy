@@ -32,11 +32,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Handy Weggy</title>
   <link rel="stylesheet" type="text/css" href="styles/inline.css">
+  <script src="scripts/meals.js" async></script>
   <script src="scripts/aisle.js" async></script>
   <script src="scripts/price.js" async></script>
   <script src="scripts/product.js" async></script>
   <script src="scripts/store.js" async></script>
+  <script src="scripts/recipe.js" async></script>
   <script src="scripts/app.js" async></script>
+  
 
   <!-- TODO add manifest here -->
   
@@ -45,11 +48,12 @@
 
   <header class="header">
     <h1 class="header__title">Handy Weggy</h1>
+    <button id="test2" class="test2" onClick="getMeals" aria-label="Test2"></button>
+    <button id="test3" class="test3" onClick="getRecipe" aria-label="Test3"></button>
     <button id="butRefresh" class="headerButton" aria-label="Refresh"></button>
     <button id="butAdd" class="headerButton" aria-label="Add"></button>
     <button id="test" class="test" aria-label="Test"></button>
   </header>
-
   <main class="main">
     <div class="card cardTemplate weather-forecast" hidden>
       <div class="city-key" hidden></div>
