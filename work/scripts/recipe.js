@@ -27,16 +27,20 @@ function getItems(data){
   $.each(incredients, function(key, value){
           eachIncredient = value 
           $.each(eachIncredient, function(key, value){
-            // console.log(value.Description);
-            listOfItems.push(value.Description);
+            console.log(value);
+            listOfItems.push({"desc":value.Description,"quantity":value.Quantity, "Id":value.Id});
           });
+          updateModelItems(listOfItems);
           console.log(listOfItems);
-          // console.log(value);
-
-         // incredient=value.Description;
-         // console.log(incredient);
-         // outputInfo +="<a href = '#' id = 'restInfo'>"+restInfo.name+"<br/>"+restInfo.location.address+"</a>";
   });
- 
-   // $(".restoDict").append(outputInfo);
+}
+
+function updateModelItems(items){
+  str = "<table class =\"striped\"><thead><tr><th>Item Name</th><th>Quantity</th></tr></thead></tbody><tbody>";
+  items.forEach(function(item){
+    quantity = item.quantity || "some";
+    str += "<tr><td>"+item.desc+"</td><td>"+quantity+"</td></tr>";
+  });
+  str += "</tbody></table>";
+  $( "#modal_list" ).html(str);
 }

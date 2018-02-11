@@ -15,7 +15,7 @@ function getAisle(sku, store){
     })
     .done(function(data) {
       if (data.length > 0){
-        console.log(data[0].AisleSide)
+        return(data[0].AisleSide);
       }
     })
     .fail(function() {

@@ -34,15 +34,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <!-- <link rel="stylesheet" type="text/css" href="styles/inline.css"> -->
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
+  <script src="scripts/recipe.js" async></script>
   <script src="scripts/meals.js" async></script>
   <script src="scripts/aisle.js" async></script>
   <script src="scripts/price.js" async></script>
   <script src="scripts/product.js" async></script>
   <script src="scripts/store.js" async></script>
-  <script src="scripts/recipe.js" async></script>
   <script src="scripts/app.js" async></script>
   
 
@@ -84,7 +85,10 @@
            <p>Meals & Recipe Types</p>
        </div>
     
-    
+    <!-- DELETE ME -->
+        <button id= 'test2' class="btn modal-close waves-effect btn-flat">Done</button>
+        <button id= 'test3' class="btn modal-close waves-effect btn-flat">Done</button>
+        <button id= 'test' class="btn modal-close waves-effect btn-flat">Done</button>
     
     
     <div class="row">
@@ -228,10 +232,23 @@
        </div>
     </div>
     <div id="meals" style="line-height: normal"></div>
-       <script src="https://code.jquery.com/jquery-3.2.1.js">
-       </script>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal modal-fixed-footer">
+      <div class="active_modal modal-content black-text">
+        <h4>Modal Header</h4>
+        <img class="modal_img"
+               src="https://images.mysafetysign.com/img/lg/L/allergy-alert-no-shellfish-please-door-decal-lb-2978.png">
+        <ul id="modal_list"></ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn modal-close waves-effect btn-flat">Done</button>
+        <button class="btn modal-close waves-effect btn-flat">Add To Cart</button>
+      </div>
+    </div>
     
     </body>
+
 </html>
 
 
