@@ -32,14 +32,7 @@ function getItems(data){
           });
           updateModelItems(listOfItems);
           console.log(listOfItems);
-          // console.log(value);
-
-         // incredient=value.Description;
-         // console.log(incredient);
-         // outputInfo +="<a href = '#' id = 'restInfo'>"+restInfo.name+"<br/>"+restInfo.location.address+"</a>";
   });
- 
-   // $(".restoDict").append(outputInfo);
 }
 
 function updateModelItems(items){
@@ -49,6 +42,6 @@ function updateModelItems(items){
     quantity = item.quantity || "some";
     str += "<tr><td>"+item.desc+"</td><td>"+quantity+"</td></tr>";
   });
-  str += "</tbody></table>"
+  str += "</tbody></table>";
   $( "#modal_list" ).html(str);
 }

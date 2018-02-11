@@ -30,7 +30,7 @@ function getPriceBySKUandStore(sku, store){
       data: "{body}",
     })
     .done(function(data) {
-        console.log(data[0].Price);
+        return data[0].Price;
     })
     .fail(function() {
         alert("error");

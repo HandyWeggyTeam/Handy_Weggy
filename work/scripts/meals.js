@@ -28,7 +28,7 @@ function getMeals(){
           });
 
         });
-         console.log(listOfmeals);   
+         return listOfmeals;  
 
     })
     .fail(function() {
