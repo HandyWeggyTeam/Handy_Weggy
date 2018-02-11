@@ -37,7 +37,7 @@ $(document).ready(function(){
     // console.log(user_location);
     var userLoc = user_location;
     var params = {
-    "locationType": "FoodMarket",
+    "locationType": "All",
     };
     $.ajax({
     url: "https://api.wegmans.io/location/location/stores?" + $.param(params),
