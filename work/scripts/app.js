@@ -64,7 +64,8 @@
     app.toggleAddDialog(false);
   });
   document.getElementById('test').addEventListener('click', getProduct);
-
+  document.getElementById('test2').addEventListener('click', getMeals);
+  document.getElementById('test3').addEventListener('click', getRecipe);
 
   /*****************************************************************************
    *
