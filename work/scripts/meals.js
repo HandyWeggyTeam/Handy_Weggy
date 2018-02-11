@@ -91,4 +91,5 @@ function openModal(event){
   $('#modal1').modal('open');
   $( "h4" ).html( name );
   $( ".modal_img" ).attr("src",pic );
+  getRecipe(id);
 }

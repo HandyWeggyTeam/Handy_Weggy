@@ -38,12 +38,12 @@
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
+  <script src="scripts/recipe.js" async></script>
   <script src="scripts/meals.js" async></script>
   <script src="scripts/aisle.js" async></script>
   <script src="scripts/price.js" async></script>
   <script src="scripts/product.js" async></script>
   <script src="scripts/store.js" async></script>
-  <script src="scripts/recipe.js" async></script>
   <script src="scripts/app.js" async></script>
   
 
@@ -202,7 +202,6 @@
        </div>
     </div>
     <div id="meals" style="line-height: normal"></div>
-    <button data-target="modal1" onClick="openModal()" class="btn modal-trigger">Modal</button>
 
     <!-- Modal Structure -->
     <div id="modal1" class="modal modal-fixed-footer">
@@ -210,10 +209,11 @@
         <h4>Modal Header</h4>
         <img class="modal_img"
                src="https://images.mysafetysign.com/img/lg/L/allergy-alert-no-shellfish-please-door-decal-lb-2978.png">
-        <p>A bunch of text</p>
+        <ul id="modal_list"></ul>
       </div>
       <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+        <button class="btn modal-close waves-effect btn-flat">Done</button>
+        <button class="btn modal-close waves-effect btn-flat">Add To Cart</button>
       </div>
     </div>
     
