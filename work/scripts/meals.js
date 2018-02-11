@@ -1,4 +1,11 @@
-
+$('img').click(function(){
+  if ($('.selected').hasClass('selected')){
+    $(this).removeClass('selected');
+  }
+  else{
+    $(this).addClass('selected');
+  }
+});
 
 function getMeals(){
   var params = {
