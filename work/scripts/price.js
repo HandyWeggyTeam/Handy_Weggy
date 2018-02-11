@@ -17,7 +17,7 @@ function getPriceBySKU(sku){
     });
 }
 
-function getPriceBySKUandStore(sku, store){
+function getPriceBySKUandStore(sku, store, item){
   store = store || 62;
   $.ajax({
       url: "https://api.wegmans.io/price/pricing/current_prices/" + sku + "/" + store,
@@ -30,9 +30,23 @@ function getPriceBySKUandStore(sku, store){
       data: "{body}",
     })
     .done(function(data) {
-        return data[0].Price;
+        if (data.length > 0){
+          console.log(data[0].Price);
+          updatePriceForItem(data[0].Price, item);
+          return data[0].Price; 
+        }
+        return null;
     })
     .fail(function() {
         alert("error");
     });
+}
+
+function updatePriceForItem(price, item){
+  shoppingCartList.forEach(function (element){
+    if (item.Id == element.Id){
+      element.price = price;
+    }
+  });
+  updateShoppingCart();
 }

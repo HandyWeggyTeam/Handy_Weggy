@@ -37,8 +37,17 @@ function getMeals(){
 }
 var meals = [];
 
+function stopViewingCart(){
+  $("#modal1").css("display", "none");
+  $(".filter_images").css("display", "block");
+  $("#meals").css("display", "block");
+  $("#cart_table").css("display", "none");
+}
+
+
 function getQueriedMeal(){
   meal = $("#search_meal").val().toLowerCase();
+  stopViewingCart();
   console.log(meal)
   var params = {
     // Request parameters

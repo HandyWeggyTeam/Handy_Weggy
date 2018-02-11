@@ -1,0 +1,93 @@
+<!--
+ Copyright 2016 Google Inc.
+ 
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ 
+      http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+   <!-- Add to home screen for Safari on iOS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Weather PWA">
+  <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta charset="utf-8">
+  <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handy Weggy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="styles/inline.css"> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  <script src="scripts/recipe.js" async></script>
+  <script src="scripts/meals.js" async></script>
+  <script src="scripts/aisle.js" async></script>
+  <script src="scripts/price.js" async></script>
+  <script src="scripts/product.js" async></script>
+  <script src="scripts/store.js" async></script>
+  <script src="scripts/app.js" async></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+</head>
+
+  <!-- TODO add manifest here -->
+  <body>
+    <nav>
+       <nav class="black">
+            <div class="nav-wrapper">
+              <a href="#" class="navbar-brand"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> My Cart</a>
+                <ul class=" center">               
+                    <li>    
+                      <div class="row">
+                        <div class="col s12 " >
+                          <div class="row" id="topbarsearch">
+                            <div class="input-field col s12 s12 red-text">
+                              <i class="red-text material-icons prefix"></i>
+                              <input type="text" placeholder="search" id="search_meal" class="white-text" >
+                              </div>
+                          </div>
+                    
+                          </div>
+                        </div> 
+                    </li>  
+                    <li>
+                      <a class="waves-effect waves-light btn-small" onClick="getQueriedMeal()">Go</a>
+                    </li>
+                    <li>Sign In</li>
+                   </ul> 
+            </div>
+          </nav> 
+    
+    <div class="container">
+
+    </div>    
+    </body>
+
+</html>
+
+
+  <!-- Uncomment the line below when ready to test with fake data -->
+  
+</body>
+</html>
