@@ -35,7 +35,8 @@ function getMeals(){
 }
 
 function getQueriedMeal(){
-  meal = $("#search_meal").val();
+  meal = $("#search_meal").val().toLowerCase();
+  console.log(meal)
   var params = {
     // Request parameters
   };
@@ -56,13 +57,19 @@ function getQueriedMeal(){
         let item = (value.name).toLowerCase();
         return item.indexOf(meal) !== -1;
       })
-      updateMeals();
+      console.log(filtered_meals);
+      updateMeals(filtered_meals);
     })
     .fail(function() {
         alert("error");
     });
 }
-
-function updateMeals(){
-  
+function updateMeals(filtered_meals){
+  str = '<div class="row">';
+  filtered_meals.forEach(function(e){
+    str +=  '<div class="col s5 m3"><div class="card"><div class="card-image"><img src="'+e.imageUrl+'"></div><div class="card-content black-text"><p>'+e.name+'</p></div></div></div>';
+  });
+  str += '</div>';
+  $( "#meals" ).html(str);
+        
 }

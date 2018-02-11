@@ -63,7 +63,7 @@
                           <div class="row" id="topbarsearch">
                             <div class="input-field col s12 s12 red-text">
                               <i class="red-text material-icons prefix"></i>
-                              <input type="text" placeholder="search" id="autocomplete-input" class="white-text" >
+                              <input type="text" placeholder="search" id="search_meal" class="white-text" >
                               </div>
                           </div>
                     
@@ -71,7 +71,7 @@
                         </div> 
                     </li>  
                     <li>
-                      <a class="waves-effect waves-light btn-small">Go</a>
+                      <a class="waves-effect waves-light btn-small" onClick="getQueriedMeal()">Go</a>
                     </li>
                     <li>Sign In</li>
                    </ul> 
@@ -199,13 +199,8 @@
             </label>  
           </div>
        </div>
-       
-        
     </div>
-        
-    
-    </div>
-    
+    <div id="meals" style="line-height: normal"></div>
        <script src="https://code.jquery.com/jquery-3.2.1.js">
        </script>
     
