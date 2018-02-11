@@ -34,6 +34,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <!-- <link rel="stylesheet" type="text/css" href="styles/inline.css"> -->
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
@@ -201,10 +202,23 @@
        </div>
     </div>
     <div id="meals" style="line-height: normal"></div>
-       <script src="https://code.jquery.com/jquery-3.2.1.js">
-       </script>
+    <button data-target="modal1" onClick="openModal()" class="btn modal-trigger">Modal</button>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal modal-fixed-footer">
+      <div class="active_modal modal-content black-text">
+        <h4>Modal Header</h4>
+        <img class="modal_img"
+               src="https://images.mysafetysign.com/img/lg/L/allergy-alert-no-shellfish-please-door-decal-lb-2978.png">
+        <p>A bunch of text</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+      </div>
+    </div>
     
     </body>
+
 </html>
 
 
