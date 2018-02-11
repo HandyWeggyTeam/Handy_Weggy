@@ -1,3 +1,4 @@
+var shoppingCartList = [];
 function getRecipe(id){
   var params = {
     // Request parameters
@@ -21,7 +22,8 @@ function getRecipe(id){
 }
 function getItems(data){
   var outputInfo="";
-  var listOfItems = [];              
+  var listOfItems = [];   
+             
   incredients = data.RecipeIngredient;
   //Gets each restaurant and displays it on the interface
   $.each(incredients, function(key, value){
@@ -29,8 +31,10 @@ function getItems(data){
           $.each(eachIncredient, function(key, value){
             console.log(value);
             listOfItems.push({"desc":value.Description,"quantity":value.Quantity, "Id":value.Id});
+            shoppingCartList.push({"desc":value.Description,"quantity":value.Quantity});
           });
           updateModelItems(listOfItems);
+          // updateShoppingCart(shoppingCartList);
           console.log(listOfItems);
   });
 }
@@ -43,4 +47,16 @@ function updateModelItems(items){
   });
   str += "</tbody></table>";
   $( "#modal_list" ).html(str);
+}
+
+function updateShoppingCart(){
+  table1 = "<table class =black-text \"responsive-table\"><thead><tr><th>Item Name</th><th>Quantity</th></tr></thead></tbody><tbody>";
+  shoppingCartList.forEach(function(item){
+    quantity = item.quantity;
+    name = item.desc; 
+    table1 += "<tr><td>"+name+"</td><td>"+quantity+"</td></tr>";
+  });
+  table1 += "</tbody></table>";
+  document.getElementById("cart_table").innerHTML = table1;
+  // $("#Shopping_Cart").html(table1);
 }

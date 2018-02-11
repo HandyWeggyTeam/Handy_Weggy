@@ -56,7 +56,7 @@
     <nav>
        <nav class="black">
             <div class="nav-wrapper">
-              <a href="#" class="navbar-brand"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> My Cart</a>
+              <a href="#Shopping_Cart" class="navbar-brand"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> My Cart</a>
                 <ul class=" center">               
                     <li>    
                       <div class="row">
@@ -243,9 +243,13 @@
       </div>
       <div class="modal-footer">
         <button class="btn modal-close waves-effect btn-flat">Done</button>
-        <button class="btn modal-close waves-effect btn-flat">Add To Cart</button>
+        <button onClick="updateShoppingCart()"class="btn modal-close waves-effect btn-flat">Add To Cart</button>
       </div>
     </div>
+    <div class="Shopping_Cart" id="cart_table">
+      <h4>SHOPPING CART</h4>
+    </div>
+
     
     </body>
 
