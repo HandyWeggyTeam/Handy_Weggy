@@ -63,14 +63,14 @@
     // Close the add new city dialog
     app.toggleAddDialog(false);
   });
-<<<<<<< HEAD
-  document.getElementById('test').addEventListener('click', getProduct);
+// <<<<<<< HEAD
+  // document.getElementById('test').addEventListener('click', getProduct);
   document.getElementById('test2').addEventListener('click', getMeals);
   document.getElementById('test3').addEventListener('click', getRecipe);
-=======
+// =======
   document.getElementById('test').addEventListener('click', getProducts);
 
->>>>>>> ee11c623dc7844891439a6e65f3d7aeac7f444b9
+// >>>>>>> ee11c623dc7844891439a6e65f3d7aeac7f444b9
 
   /*****************************************************************************
    *

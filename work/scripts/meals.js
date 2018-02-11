@@ -26,7 +26,7 @@ function getMeals(meal){
           });
 
         });
-         console.log(listOfmeals);   
+         return listOfmeals;  
 
     })
     .fail(function() {

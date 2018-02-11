@@ -30,7 +30,7 @@ function getItems(data){
             // console.log(value.Description);
             listOfItems.push(value.Description);
           });
-          console.log(listOfItems);
+          return listOfItems;
           // console.log(value);
 
          // incredient=value.Description;
