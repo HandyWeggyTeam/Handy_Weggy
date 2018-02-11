@@ -53,11 +53,13 @@
 
   <!-- TODO add manifest here -->
   <body>
+
     <nav>
        <nav class="black">
             <div class="nav-wrapper">
               <a href="#Shopping_Cart" onClick="viewCart()" class="navbar-brand"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> My Cart</a>
-                <ul class=" center">               
+                <ul class=" center"> 
+                    <li style="display:inline; width:10%; height:40px"></li>
                     <li>    
                       <div class="row">
                         <div class="col s12 " >
@@ -74,23 +76,21 @@
                     <li>
                       <a class="waves-effect waves-light btn-small" onClick="getQueriedMeal()">Go</a>
                     </li>
-                    <li>Sign In</li>
+                    <li style="display:inline; width:50%; height:40px"></li>
+                    <li style="display:inline">  
+                    Store             
+                    <li>  
+                    <li style="display:inline; width:1%; height:40px"></li>
+                    <li style=" text-align:center; padding-left: 10%">Sign In</li>
                    </ul> 
             </div>
           </nav> 
-    
     <div class="container">
-    <div class="filter_images">
+      <div class="filter_images">
        <div class="jumbotron black">
          <h1><span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span> Handy Weggy</h1>
            <p>Meals & Recipe Types</p>
        </div>
-    
-    <!-- DELETE ME -->
-        <button id= 'test2' class="btn modal-close waves-effect btn-flat">Done</button>
-        <button id= 'test3' class="btn modal-close waves-effect btn-flat">Done</button>
-        <button id= 'test' class="btn modal-close waves-effect btn-flat">Done</button>
-    
     
     <div class="row">
       <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
@@ -248,7 +248,10 @@
         <button onClick="updateShoppingCart()"class="btn modal-close waves-effect btn-flat">Add To Cart</button>
       </div>
     </div>
-    <div class="Shopping_Cart col-xs-4 col-sm-3 col-md-8 offset-m3" id="cart_table" style="display:none">
+    <div class="Store Near Me" id="store_table">
+     <h4>STORES NEAR ME</h4>
+   </div>
+    <div class="Shopping_Cart col-xs-4 col-sm-3 col-md-8 offset-m3 center-block text-center" id="cart_table" style="display:none">
       <h4>SHOPPING CART</h4>
       <table class ="black-text striped responsive-table"><thead><tr><th>Item Name</th><th>Aisle</th><th>Quantity</th><th>Price</th></tr></thead>
       <tr><td>No Products</td><td>...</td><td>...</td><td>...</td></tr>

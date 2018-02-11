@@ -14,6 +14,7 @@
 // }
 var data_location;
 var resultList = [];
+var stores = [];
 $(document).ready(function(){
 
   var langLong = function(){
@@ -61,6 +62,7 @@ $(document).ready(function(){
     });
   }
   var getCordinates = function(user_location, wegmanLocation) {
+      console.log("here")
       var userLat = user_location.latitude;
       var userLong = user_location.longitude;
       $.each(wegmanLocation, function(key,value){
@@ -73,7 +75,8 @@ $(document).ready(function(){
       return a.d - b.d;
       });
       // console.log(resultList);
-      var stores = resultList.slice(1, 6);
+      stores = resultList.slice(1, 6);
+      FindStoreNearMe();
       console.log(stores);
   };
   var getDistance = function(userLat, userLong, value){
@@ -97,5 +100,20 @@ $(document).ready(function(){
   };
 
   langLong();
+  function FindStoreNearMe(){
+    console.log("called store");
+    console.log(stores)
+    var table1 = "<table class =black-text \"responsive-table\"><thead><tr><th>StoreName</th><th>StreetAddress</th></tr></thead></tbody><tbody>";
+    stores.forEach(function(item){
+      console.log(item)
+     name = item.name;
+     street = item.street;
+     table1 += "<tr><td>"+name+"</td><td>"+street+"</td></tr>";
+    });
+    table1 += "</tbody></table>";
+    console.log(table1);
+    document.getElementById("store_table").innerHTML = table1;
+  };
 
 });
+

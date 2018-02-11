@@ -53,6 +53,7 @@ function updateModelItems(items){
 }
 
 function updateShoppingCart(){
+  FindStoreNearMe();
   table1 = "<table class =\"black-text striped \"responsive-table\"><thead><tr><th>Item Name</th><th>Aisle</th><th>Quantity</th><th>Price</th></tr></thead></tbody><tbody>";
   shoppingCartList.forEach(function(item){
     quantity = item.quantity;
