@@ -17,8 +17,6 @@ $(document).ready(function(){
       })
     }
   var a2 = function(user_location) {
-    // console.log("Loc : ");
-    // console.log(user_location);
     var userLoc = user_location;
     var params = {
     "locationType": "FoodMarket",
@@ -34,11 +32,6 @@ $(document).ready(function(){
     data: "{body}",
   })
     .done(function(data) {
-      // product = getFirstResult(data);
-      // console.log(data);
-      // getAisle(511053, 64);
-      // getPriceBySKUandStore(product['sku']);
-      // console.log(data);
       wegmanLocation = data;
       var value = getCordinates(userLoc, wegmanLocation);
 

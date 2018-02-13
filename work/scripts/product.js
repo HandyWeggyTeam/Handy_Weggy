@@ -10,10 +10,6 @@ function getProducts(){
       data: "{body}",
     })
     .done(function(data) {
-      // product = getFirstResult(data);
-      console.log(data);
-      // getAisle(511053, 64);
-      // getPriceBySKUandStore(product['sku']);
     })
     .fail(function() {
         alert("error");
